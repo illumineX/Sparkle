@@ -1,0 +1,9 @@
+.DS_Store
+dsa_pub.pem
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+build
