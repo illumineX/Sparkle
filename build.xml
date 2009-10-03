@@ -1,0 +1,23 @@
+<project name="SparkleFrameworkCopy" default="." basedir=".">
+  <property file="../build.properties"/>
+  <property name="target.name" value="Sparkle.framework"/>
+
+  <target name="build">
+    <copy todir="/Local/Library/iXProducts/Sparkle.framework">
+        <fileset dir="Sparkle.framework"/>
+    </copy>
+  </target>
+
+  <target name="clean">
+    <exec executable="xcodebuild" dir="." failonerror="false">
+      <arg line="-alltargets clean"/>
+    </exec>
+    <delete dir="${frameworks.dir}/${target.name}" verbose="true" failonerror="false"/>
+      <delete dir="build/Deployment" verbose="true" failonerror="false"/>
+      <delete dir="build/Development" verbose="true" failonerror="false"/>
+      <delete dir="build/Default" verbose="true" failonerror="false"/>
+      <delete dir="build/Debug" verbose="true" failonerror="false"/>
+      <delete dir="build/Release" verbose="true" failonerror="false"/>
+  </target>
+
+</project>
